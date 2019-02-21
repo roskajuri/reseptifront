@@ -12,6 +12,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { GlobalService} from './service/global.service';
 import { ReseptiComponent } from './resepti/resepti.component';
 import { ReseptimuokkausComponent } from './reseptimuokkaus/reseptimuokkaus.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { ReseptimuokkausComponent } from './reseptimuokkaus/reseptimuokkaus.comp
     LoginComponent,
     HomeComponent,
     ReseptiComponent,
-    ReseptimuokkausComponent
+    ReseptimuokkausComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,9 @@ import { ReseptimuokkausComponent } from './reseptimuokkaus/reseptimuokkaus.comp
     AppRoutingModule,
     ReactiveFormsModule,
     MatBadgeModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule,
+    MatListModule
     
   ],
   providers: [

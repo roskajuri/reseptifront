@@ -1,11 +1,12 @@
-<div>
+<div width="200">
   <div *ngFor="let resepti of reseptit"  class="movieClickable" (click)="muokkaaRaakaainepainettu(resepti.reseptiid,resepti.raakaaine.raakaaineid)"> 
  
-  {{resepti.raakaaine.nimi}} {{resepti.prosenttisuus}} %<button (click)="poistaRaakaainepainettu(resepti.reseptiid)">delete</button>
 
 
+<mat-nav-list>
+ <a mat-list-item>{{resepti.raakaaine.nimi}} {{resepti.prosenttisuus}} %<button (click)="poistaRaakaainepainettu(resepti.reseptiid)">delete</button></a>
+  </mat-nav-list>
 
-<hr>
 
     
 
