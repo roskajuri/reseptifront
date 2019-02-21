@@ -10,7 +10,8 @@ import {MatInputModule} from '@angular/material/input';  //login
 import {MatFormFieldModule} from '@angular/material/form-field'; //login
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +42,9 @@ import { ReseptimuokkausComponent } from './reseptimuokkaus/reseptimuokkaus.comp
     MatProgressSpinnerModule,
     MatSnackBarModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatBadgeModule,
+    MatDialogModule
     
   ],
   providers: [

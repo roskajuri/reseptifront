@@ -1,5 +1,63 @@
+<div>
+  <div *ngFor="let resepti of reseptit"  class="movieClickable" (click)="muokkaaRaakaainepainettu(resepti.reseptiid,resepti.raakaaine.raakaaineid)"> 
+ 
+  {{resepti.raakaaine.nimi}} {{resepti.prosenttisuus}} %<button (click)="poistaRaakaainepainettu(resepti.reseptiid)">delete</button>
 
-  <div *ngFor="let resepti of reseptit"> 
-  {{resepti.raakaaine.nimi}} {{resepti.prosenttisuus}} %
+
+
+<hr>
+
+    
+
   </div>
 
+
+  <div>
+
+
+
+
+ <div *ngIf="!raakaAinemuokkapainettu">
+  lisää raakaaine
+<form (ngSubmit)="tallennaRaakaaine()" [formGroup]="reseptiInput">
+<div class="form-group">
+
+  <mat-form-field>
+<input type="number" matInput placeholder="prosenttisuus" formControlName="prosenttisuus">
+   </mat-form-field>
+ <mat-form-field>
+  <select  matNativeControl required formControlName="raakaaine" placeholder="raakaaine">
+    <option *ngFor="let aine of raakaaineet" value="{{aine.raakaaineid}}">{{aine.nimi}}</option>
+  </select>
+   </mat-form-field>
+</div>
+ <button type="submit" color="primary">Save</button><br>
+          </form>
+   </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+ <div *ngIf="raakaAinemuokkapainettu">
+ Moukka prosenttisuus
+<form (ngSubmit)="tallennaRaakaaineprosenttipainettu()" [formGroup]="prosenttiInput">
+<div class="form-group">
+  <mat-form-field>
+<input type="number" matInput formControlName="prosenttisuus" value>
+   </mat-form-field>
+</div>
+ <button type="submit" color="primary">Save</button> 
+          </form>
+ </div>
+
+
+
+
+ </div>
