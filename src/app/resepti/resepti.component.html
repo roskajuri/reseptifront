@@ -1,3 +1,7 @@
-<p>
-  resepti works!
-</p>
+<div class="container">
+<h2>Resepti</h2>
+<div *ngFor="let tuote of tuotteet"> 
+<h4><a routerLink="/resepti/{{tuote.tuoteid}}/">{{tuote.nimi}}</a></h4>
+</div>
+
+

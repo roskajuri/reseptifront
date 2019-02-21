@@ -19,13 +19,15 @@ import { HomeComponent } from './home/home.component';
 
 import { GlobalService} from './service/global.service';
 import { ReseptiComponent } from './resepti/resepti.component';
+import { ReseptimuokkausComponent } from './reseptimuokkaus/reseptimuokkaus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ReseptiComponent
+    ReseptiComponent,
+    ReseptimuokkausComponent
   ],
   imports: [
     BrowserModule,
