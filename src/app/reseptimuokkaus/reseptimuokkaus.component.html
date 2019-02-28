@@ -3,9 +3,9 @@
  
 
 
-<mat-nav-list>
- <a mat-list-item>{{resepti.raakaaine.nimi}} {{resepti.prosenttisuus}} %<button (click)="poistaRaakaainepainettu(resepti.reseptiid)">delete</button></a>
-  </mat-nav-list>
+
+ <a>{{resepti.raakaaine.nimi}} {{resepti.prosenttisuus}} %<button (click)="poistaRaakaainepainettu(resepti.reseptiid)">delete</button></a>
+
 
 
     
@@ -23,14 +23,13 @@
 <form (ngSubmit)="tallennaRaakaaine()" [formGroup]="reseptiInput">
 <div class="form-group">
 
-  <mat-form-field>
+
 <input type="number" matInput placeholder="prosenttisuus" formControlName="prosenttisuus">
-   </mat-form-field>
- <mat-form-field>
-  <select  matNativeControl required formControlName="raakaaine" placeholder="raakaaine">
+
+  <select formControlName="raakaaine" placeholder="raakaaine" required>
     <option *ngFor="let aine of raakaaineet" value="{{aine.raakaaineid}}">{{aine.nimi}}</option>
   </select>
-   </mat-form-field>
+
 </div>
  <button type="submit" color="primary">Save</button><br>
           </form>
@@ -50,9 +49,9 @@
  Moukka prosenttisuus
 <form (ngSubmit)="tallennaRaakaaineprosenttipainettu()" [formGroup]="prosenttiInput">
 <div class="form-group">
-  <mat-form-field>
-<input type="number" matInput formControlName="prosenttisuus" value>
-   </mat-form-field>
+
+<input type="number" formControlName="prosenttisuus" required>
+
 </div>
  <button type="submit" color="primary">Save</button> 
           </form>

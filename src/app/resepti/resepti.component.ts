@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Resepti } from '../models/resepti';
-
+import { Router } from '@angular/router';
 import { ReseptiService } from '../service/resepti.service';
 
 @Component({
@@ -12,10 +12,15 @@ export class ReseptiComponent implements OnInit {
   reseptit;
   tuotteet;
   valittuTuote;
-  constructor(private reseptiService: ReseptiService) { }
+  constructor(private reseptiService: ReseptiService, private router: Router) { }
 
   ngOnInit() {
-    this.HaeTuotteet();
+    if (localStorage.getItem('token') && localStorage.getItem('account')) {
+      this.HaeTuotteet();
+    } else {
+      this.router.navigate(['/login']);
+    }
+   
   }
 
 

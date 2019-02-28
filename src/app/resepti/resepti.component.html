@@ -1,6 +1,6 @@
 <div class="container">
-<mat-nav-list *ngFor="let tuote of tuotteet">
- <a mat-list-item routerLink="/resepti/{{tuote.tuoteid}}/" >{{tuote.nimi}}</a>
-  </mat-nav-list>
+<div *ngFor="let tuote of tuotteet">
+ <a routerLink="/resepti/{{tuote.tuoteid}}/" >{{tuote.nimi}}</a>
+  </div>
 </div>
 

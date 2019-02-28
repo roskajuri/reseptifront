@@ -4,16 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule} from '@angular/forms' //login
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material'; //login
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';  //login
-import {MatFormFieldModule} from '@angular/material/form-field'; //login
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatListModule} from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,18 +29,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatProgressSpinnerModule,
-    MatSnackBarModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatBadgeModule,
-    MatDialogModule,
-    MatToolbarModule,
-    MatListModule
     
   ],
   providers: [
