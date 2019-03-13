@@ -15,6 +15,10 @@ import { ReseptiComponent } from './resepti/resepti.component';
 import { ReseptimuokkausComponent } from './reseptimuokkaus/reseptimuokkaus.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +35,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+
     
   ],
   providers: [

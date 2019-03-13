@@ -1,6 +1,16 @@
-<div class="container">
-<div *ngFor="let tuote of tuotteet">
- <a routerLink="/resepti/{{tuote.tuoteid}}/" >{{tuote.nimi}}</a>
-  </div>
-</div>
+<div class="row rivi" *ngFor="let tuote of tuotteet">
+    <div class="col-6">
+        <a routerLink="/resepti/{{tuote.tuoteid}}/" >[{{tuote.tuoteid}}] {{tuote.nimi}}</a>
+    </div>
 
+    <div class="col-2">
+        {{tuote.ryhma}}
+    </div>
+
+    <div class="col-2">
+       {{tuote.voimassaoloalku}}
+    </div>
+    <div class="col-2">
+      {{tuote.voimassaololoppu}}
+    </div>
+  </div>

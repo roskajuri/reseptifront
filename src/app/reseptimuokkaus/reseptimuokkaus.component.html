@@ -1,63 +1,65 @@
-<div width="200">
-  <div *ngFor="let resepti of reseptit"  class="movieClickable" (click)="muokkaaRaakaainepainettu(resepti.reseptiid,resepti.raakaaine.raakaaineid)"> 
- 
+<div class="row">
+  <div class="col-12">
+    <h2>{{reseptit && reseptit[0].tuote.nimi}}</h2>
+  </div>
+</div>
 
 
 
- <a>{{resepti.raakaaine.nimi}} {{resepti.prosenttisuus}} %<button (click)="poistaRaakaainepainettu(resepti.reseptiid)">delete</button></a>
+<div class="row rivi" *ngFor="let resepti of reseptit">
+  <div class="col-3">{{resepti.raakaaine.nimi}}{{resepti.raakaaine.voimassaololoppu}}</div>
+  <div class="col-2"><b>{{resepti.prosenttisuus}} %</b></div>
+  <div class="col-2">
+    <button type="button" class="btn btn-success btn-sm" (click)="muokkaaRaakaainepainettu(resepti.reseptiid,resepti.raakaaine.raakaaineid)">Muokkaa</button></div>
+  <div class="col-2">
+    </div>
+  <div class="col-3">[{{resepti.jarjestysnumero}}]{{resepti.valmitusohje}}</div>
+</div>
 
 
+<div class="row rivi">
+    <div class="col-3"><b>Yhteensä:</b></div>
+    <div class="col-2"><b>Na %</b></div>
+    <div class="col-7"><b>{{reseptiSum}}</b></div>
+</div>
 
-    
+<div class="row" *ngIf="raakaAinemuokkapainettu">
+
+  <div class="col-12">
+    <form (ngSubmit)="tallennaRaakaaineprosenttipainettu()" [formGroup]="prosenttiInput">
+      <div class="form-group">
+          <input class="form-control" type="number" formControlName="jarjestysnumero" required>
+        <input class="form-control" type="number" formControlName="prosenttisuus" required>
+        <input class="form-control" type="text" matInput placeholder="valmitusohje" formControlName="valmitusohje">
+      </div>
+      <button type="submit" color="primary">Save</button> ------------------><button type="button" class="btn btn-danger btn-sm" (click)="poistaRaakaainepainettu(resepti.reseptiid)">Poista</button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-8" (click)="raakaAinelisauspainettu=!raakaAinelisauspainettu"><button type="button" class="btn btn-primary">Lisää
+      raaka-aine</button></div>
+</div>
+
+<div class="row rivi" *ngIf="raakaAinelisauspainettu">
+  <div class="col-12">
+
+
+    <form (ngSubmit)="tallennaRaakaaine()" [formGroup]="reseptiInput">
+      <div class="form-group">
+        <label for="raakaaine">Lisättävä raaka-aine</label>
+        <select class="form-control" formControlName="raakaaine" placeholder="raakaaine" required>
+          <option *ngFor="let aine of raakaaineet" value="{{aine.raakaaineid}}">{{aine.nimi}}</option>
+        </select>
+        <input class="form-control" type="number" formControlName="jarjestysnumero" required>
+        <input class="form-control" type="number" matInput placeholder="prosenttisuus" formControlName="prosenttisuus">
+        <input class="form-control" type="text" matInput placeholder="valmitusohje" formControlName="valmitusohje">
+
+
+      </div>
+      <button type="submit" color="primary">Save</button><br>
+    </form>
 
   </div>
 
-
-  <div>
-
-
-
-
- <div *ngIf="!raakaAinemuokkapainettu">
-  lisää raakaaine
-<form (ngSubmit)="tallennaRaakaaine()" [formGroup]="reseptiInput">
-<div class="form-group">
-
-
-<input type="number" matInput placeholder="prosenttisuus" formControlName="prosenttisuus">
-
-  <select formControlName="raakaaine" placeholder="raakaaine" required>
-    <option *ngFor="let aine of raakaaineet" value="{{aine.raakaaineid}}">{{aine.nimi}}</option>
-  </select>
-
 </div>
- <button type="submit" color="primary">Save</button><br>
-          </form>
-   </div>
-
-
-
-
-
-
-
-
-
-</div>
-
- <div *ngIf="raakaAinemuokkapainettu">
- Moukka prosenttisuus
-<form (ngSubmit)="tallennaRaakaaineprosenttipainettu()" [formGroup]="prosenttiInput">
-<div class="form-group">
-
-<input type="number" formControlName="prosenttisuus" required>
-
-</div>
- <button type="submit" color="primary">Save</button> 
-          </form>
- </div>
-
-
-
-
- </div>

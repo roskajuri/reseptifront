@@ -1,0 +1,11 @@
+.sivu {
+    width: 600px;
+    max-width: 600px;
+    align-self: center;
+    align-content: center;
+    background: #efefef;
+}
+
+.tausta {
+    background: #efefef;
+}
